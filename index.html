@@ -1060,47 +1060,81 @@ function closeMobile() {
 
 <!-- VIDEOS -->
 <section id="videos" style="background:var(--surface)">
-  <div class="section-tag">📺 Multimedia</div>
-  <div class="section-title">Videos y guías en video</div>
-  <p class="section-sub">Los mejores videos de la comunidad para encontrar items, derrotar jefes y descubrir secretos.</p>
-  <div class="builds-grid" style="margin-top:40px">
-    <div class="build-card fade-up" style="text-align:center">
-      <div class="build-icon">🗡️</div>
-      <h3>Guía de armas</h3>
-      <p>Dónde conseguir cada tipo de arma y cómo mejorarlas. Sistema de slots explicado paso a paso.</p>
-      <a href="https://www.youtube.com/results?search_query=crimson+desert+weapons+guide" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:14px;font-size:12px">Ver en YouTube →</a>
-    </div>
-    <div class="build-card fade-up" style="text-align:center">
-      <div class="build-icon">🗺️</div>
-      <h3>Todas las campanas</h3>
-      <p>Ubicación de todas las campanas ocultas en Pywel. Video con mapa y coordenadas exactas.</p>
-      <a href="https://www.youtube.com/results?search_query=crimson+desert+all+bell+locations" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:14px;font-size:12px">Ver en YouTube →</a>
-    </div>
-    <div class="build-card fade-up" style="text-align:center">
-      <div class="build-icon">💜</div>
-      <h3>Artefactos del Abismo</h3>
-      <p>Dónde encontrar todos los Abyss Artifacts. Esenciales para mejorar habilidades y conseguir Abyss Gear.</p>
-      <a href="https://www.youtube.com/results?search_query=crimson+desert+abyss+artifact+locations" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:14px;font-size:12px">Ver en YouTube →</a>
-    </div>
-    <div class="build-card fade-up" style="text-align:center">
-      <div class="build-icon">👹</div>
-      <h3>Guías de jefes</h3>
-      <p>Cómo derrotar cada boss. Patrones de ataque, estrategias y mejores builds para cada enfrentamiento.</p>
-      <a href="https://www.youtube.com/results?search_query=crimson+desert+boss+guide" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:14px;font-size:12px">Ver en YouTube →</a>
-    </div>
-    <div class="build-card fade-up" style="text-align:center">
-      <div class="build-icon">🏆</div>
-      <h3>100% completo</h3>
-      <p>Guía para completar el juego al 100%. Todos los logros, secretos y endings disponibles.</p>
-      <a href="https://www.youtube.com/results?search_query=crimson+desert+100+percent+completion" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:14px;font-size:12px">Ver en YouTube →</a>
-    </div>
-    <div class="build-card fade-up" style="text-align:center">
-      <div class="build-icon">🎮</div>
-      <h3>Walkthrough completo</h3>
-      <p>Guía de historia completa con todas las decisiones y misiones secundarias incluidas.</p>
-      <a href="https://www.youtube.com/results?search_query=crimson+desert+walkthrough+2026" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:14px;font-size:12px">Ver en YouTube →</a>
-    </div>
+  <div class="section-tag">📺 Videos</div>
+  <div class="section-title">Guías en video</div>
+  <p class="section-sub">Videos de la comunidad sobre Crimson Desert. Hacé click en cualquier categoría para ver el video.</p>
+
+  <!-- Tabs de categorías -->
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 24px" id="vid-tabs">
+    <button onclick="loadVideo('walkthrough','Crimson Desert Walkthrough Completo 2026')" class="vid-tab" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:linear-gradient(135deg,var(--red),#8b0000);color:white;transition:all .2s">🎮 Walkthrough</button>
+    <button onclick="loadVideo('bosses','Crimson Desert All Bosses Guide')" class="vid-tab" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">👹 Jefes</button>
+    <button onclick="loadVideo('weapons','Crimson Desert Weapons Guide Best Weapons')" class="vid-tab" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">⚔️ Armas</button>
+    <button onclick="loadVideo('bells','Crimson Desert All Bell Locations')" class="vid-tab" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">🔔 Campanas</button>
+    <button onclick="loadVideo('abyss','Crimson Desert Abyss Artifacts All Locations')" class="vid-tab" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">💜 Artefactos</button>
+    <button onclick="loadVideo('tips','Crimson Desert Tips Tricks Beginners Guide')" class="vid-tab" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">💡 Tips</button>
+    <button onclick="loadVideo('builds','Crimson Desert Best Build Character')" class="vid-tab" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">🎯 Builds</button>
+    <button onclick="loadVideo('secrets','Crimson Desert Secrets Hidden Items')" class="vid-tab" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">🗝️ Secretos</button>
   </div>
+
+  <!-- Reproductor -->
+  <div id="vid-player" style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border2);background:var(--surface2);aspect-ratio:16/9;max-height:520px;position:relative">
+    <iframe
+      id="yt-frame"
+      style="width:100%;height:100%;border:none;display:block"
+      src="https://www.youtube-nocookie.com/embed?listType=search&list=Crimson+Desert+Walkthrough+Completo+2026&autoplay=0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      title="Crimson Desert Videos">
+    </iframe>
+  </div>
+  <p style="font-size:12px;color:var(--text2);margin-top:10px;text-align:center">Los videos son de YouTube. Si no carga, probá abrirlo directamente en YouTube.</p>
+
+  <!-- Grid de links directos -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:28px">
+    <a href="https://www.youtube.com/results?search_query=crimson+desert+walkthrough+2026" target="_blank" class="weapon-card fade-up" style="text-decoration:none;display:block">
+      <div style="font-size:28px;margin-bottom:10px">🎮</div>
+      <h3 style="font-size:14px;margin-bottom:6px">Walkthrough completo</h3>
+      <p style="font-size:12px">Historia principal paso a paso</p>
+    </a>
+    <a href="https://www.youtube.com/results?search_query=crimson+desert+all+bosses+guide" target="_blank" class="weapon-card fade-up" style="text-decoration:none;display:block">
+      <div style="font-size:28px;margin-bottom:10px">👹</div>
+      <h3 style="font-size:14px;margin-bottom:6px">Todos los jefes</h3>
+      <p style="font-size:12px">Estrategias para cada boss</p>
+    </a>
+    <a href="https://www.youtube.com/results?search_query=crimson+desert+all+bell+locations" target="_blank" class="weapon-card fade-up" style="text-decoration:none;display:block">
+      <div style="font-size:28px;margin-bottom:10px">🔔</div>
+      <h3 style="font-size:14px;margin-bottom:6px">Todas las campanas</h3>
+      <p style="font-size:12px">Ubicaciones ocultas en Pywel</p>
+    </a>
+    <a href="https://www.youtube.com/results?search_query=crimson+desert+abyss+artifacts" target="_blank" class="weapon-card fade-up" style="text-decoration:none;display:block">
+      <div style="font-size:28px;margin-bottom:10px">💜</div>
+      <h3 style="font-size:14px;margin-bottom:6px">Artefactos del Abismo</h3>
+      <p style="font-size:12px">Dónde conseguirlos todos</p>
+    </a>
+    <a href="https://www.youtube.com/results?search_query=crimson+desert+best+weapons+armor" target="_blank" class="weapon-card fade-up" style="text-decoration:none;display:block">
+      <div style="font-size:28px;margin-bottom:10px">⚔️</div>
+      <h3 style="font-size:14px;margin-bottom:6px">Mejores armas</h3>
+      <p style="font-size:12px">Guía de equipamiento</p>
+    </a>
+    <a href="https://www.youtube.com/results?search_query=crimson+desert+100+percent+completion" target="_blank" class="weapon-card fade-up" style="text-decoration:none;display:block">
+      <div style="font-size:28px;margin-bottom:10px">🏆</div>
+      <h3 style="font-size:14px;margin-bottom:6px">100% completo</h3>
+      <p style="font-size:12px">Todos los trofeos y logros</p>
+    </a>
+  </div>
+
+  <script>
+  function loadVideo(type, query) {
+    document.getElementById('yt-frame').src = 
+      'https://www.youtube-nocookie.com/embed?listType=search&list=' + encodeURIComponent(query) + '&autoplay=0';
+    document.querySelectorAll('.vid-tab').forEach(t => {
+      t.style.background = 'var(--surface2)';
+      t.style.color = 'var(--text2)';
+    });
+    event.target.style.background = 'linear-gradient(135deg,var(--red),#8b0000)';
+    event.target.style.color = 'white';
+  }
+  </script>
 </section>
 
 <div class="divider"></div>
