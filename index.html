@@ -677,11 +677,50 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="weapon-stats"><span class="stat-pill">Viaje rápido</span><span class="stat-pill">Mejor equipo</span></div>
     </div>
   </div>
-  <!-- VIDEO MAPA -->
-  <div style="margin-top:40px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center" class="fade-up">
-    <div class="section-tag" style="margin-bottom:12px">🗺️ Mapa interactivo</div>
-    <p style="color:var(--text2);font-size:14px;margin-bottom:20px">El mapa oficial interactivo de Pywel está disponible en Fextralife Wiki.</p>
-    <a href="https://crimsondesert.wiki.fextralife.com/Interactive+Map" target="_blank" class="btn-primary" style="display:inline-flex">🗺️ Ver mapa interactivo →</a>
+  <!-- MAPA INTERACTIVO EMBEBIDO -->
+  <div style="margin-top:40px" class="fade-up">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
+      <div>
+        <div class="section-tag" style="margin-bottom:6px">🗺️ Mapa interactivo de Pywel</div>
+        <p style="color:var(--text2);font-size:13px">Todos los puntos de interés: jefes, artefactos, NPCs, misiones y más.</p>
+      </div>
+      <a href="https://crimsondesert.wiki.fextralife.com/Interactive+Map" target="_blank" class="btn-secondary" style="font-size:12px">Abrir en pantalla completa ↗</a>
+    </div>
+    <div style="position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border2);box-shadow:0 8px 32px rgba(0,0,0,0.4)">
+      <iframe 
+        src="https://crimsondesert.wiki.fextralife.com/Interactive+Map"
+        style="width:100%;height:600px;border:none;display:block;background:#0a0508"
+        title="Mapa interactivo de Pywel - Crimson Desert"
+        loading="lazy">
+      </iframe>
+    </div>
+    <!-- Leyenda de íconos del mapa -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:16px">
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;align-items:center;gap:10px">
+        <span style="font-size:18px">👹</span>
+        <div><div style="font-size:12px;font-weight:700;color:var(--red2)">BOSSES</div><div style="font-size:11px;color:var(--text2)">Jefes y mini-jefes</div></div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;align-items:center;gap:10px">
+        <span style="font-size:18px">💜</span>
+        <div><div style="font-size:12px;font-weight:700;color:#9b59b6">ABISMO</div><div style="font-size:11px;color:var(--text2)">Artefactos y puertas</div></div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;align-items:center;gap:10px">
+        <span style="font-size:18px">🔔</span>
+        <div><div style="font-size:12px;font-weight:700;color:var(--gold)">CAMPANAS</div><div style="font-size:11px;color:var(--text2)">Coleccionables ocultos</div></div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;align-items:center;gap:10px">
+        <span style="font-size:18px">🧑‍🤝‍🧑</span>
+        <div><div style="font-size:12px;font-weight:700;color:#3498db">NPCs</div><div style="font-size:11px;color:var(--text2)">Vendedores y personajes</div></div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;align-items:center;gap:10px">
+        <span style="font-size:18px">📜</span>
+        <div><div style="font-size:12px;font-weight:700;color:var(--green)">MISIONES</div><div style="font-size:11px;color:var(--text2)">Quests y desafíos</div></div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;align-items:center;gap:10px">
+        <span style="font-size:18px">🎮</span>
+        <div><div style="font-size:12px;font-weight:700;color:var(--gold2)">MINIJUEGOS</div><div style="font-size:11px;color:var(--text2)">Actividades del pueblo</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
