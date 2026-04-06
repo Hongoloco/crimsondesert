@@ -686,14 +686,156 @@ footer a{color:var(--gold);text-decoration:none}
       </div>
       <a href="https://crimsondesert.wiki.fextralife.com/Interactive+Map" target="_blank" class="btn-secondary" style="font-size:12px">Abrir en pantalla completa ↗</a>
     </div>
-    <div style="position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border2);box-shadow:0 8px 32px rgba(0,0,0,0.4)">
-      <iframe 
-        src="https://crimsondesert.wiki.fextralife.com/Interactive+Map"
-        style="width:100%;height:600px;border:none;display:block;background:#0a0508"
-        title="Mapa interactivo de Pywel - Crimson Desert"
-        loading="lazy">
-      </iframe>
+    <div style="position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border2);box-shadow:0 8px 32px rgba(0,0,0,0.4);background:#0d0810">
+      <div id="map-container" style="width:100%;height:620px;position:relative;overflow:hidden;cursor:grab;background:radial-gradient(ellipse at 50% 40%,#1a0d18 0%,#0a050c 70%)">
+        
+        <!-- SVG MAPA DE PYWEL -->
+        <svg id="pywel-map" viewBox="0 0 1000 700" style="width:100%;height:100%;position:absolute;inset:0" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow-red"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="glow-gold"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+
+          <!-- OCÉANO / FONDO -->
+          <rect width="1000" height="700" fill="#0d0810"/>
+          
+          <!-- OCÉANO -->
+          <ellipse cx="500" cy="350" rx="480" ry="340" fill="#0f1a2e" opacity="0.6"/>
+          
+          <!-- REGIÓN: HERNAND (noroeste) -->
+          <path d="M 80,80 Q 180,60 280,100 Q 320,150 300,230 Q 260,280 180,290 Q 100,280 70,220 Q 50,160 80,80 Z" 
+                fill="#1a2e1a" stroke="#2d5a2d" stroke-width="2" opacity="0.9"/>
+          <text x="185" y="185" fill="#4ade80" font-size="13" font-weight="bold" text-anchor="middle" font-family="Cinzel,serif">HERNAND</text>
+          <text x="185" y="200" fill="#86efac" font-size="9" text-anchor="middle">Región principal</text>
+
+          <!-- REGIÓN: PAILUNE (norte centro) -->
+          <path d="M 350,50 Q 480,30 560,80 Q 590,130 570,200 Q 530,240 450,240 Q 380,230 350,180 Q 330,130 350,50 Z"
+                fill="#2e1a1a" stroke="#5a2d2d" stroke-width="2" opacity="0.9"/>
+          <text x="460" y="145" fill="#fca5a5" font-size="13" font-weight="bold" text-anchor="middle" font-family="Cinzel,serif">PAILUNE</text>
+          <text x="460" y="160" fill="#fca5a5" font-size="9" text-anchor="middle">Ciudad en conflicto</text>
+
+          <!-- REGIÓN: DEMENISS (noreste) -->
+          <path d="M 620,60 Q 720,40 820,90 Q 870,140 850,220 Q 810,270 730,270 Q 650,260 620,200 Q 600,150 620,60 Z"
+                fill="#1a1a2e" stroke="#2d2d5a" stroke-width="2" opacity="0.9"/>
+          <text x="730" y="165" fill="#818cf8" font-size="13" font-weight="bold" text-anchor="middle" font-family="Cinzel,serif">DEMENISS</text>
+          <text x="730" y="180" fill="#818cf8" font-size="9" text-anchor="middle">Montañas del norte</text>
+
+          <!-- REGIÓN: DELESYIA (centro) -->
+          <path d="M 280,310 Q 420,280 550,310 Q 590,360 570,440 Q 530,490 420,500 Q 310,490 270,440 Q 250,390 280,310 Z"
+                fill="#1a2a1a" stroke="#3d6b3d" stroke-width="2" opacity="0.9"/>
+          <text x="415" y="400" fill="#6ee7b7" font-size="13" font-weight="bold" text-anchor="middle" font-family="Cinzel,serif">DELESYIA</text>
+          <text x="415" y="415" fill="#6ee7b7" font-size="9" text-anchor="middle">Naturaleza y ríos</text>
+
+          <!-- REGIÓN: CRIMSON DESERT (sureste) -->
+          <path d="M 600,330 Q 720,300 840,350 Q 880,410 860,490 Q 820,540 730,550 Q 620,540 590,480 Q 570,420 600,330 Z"
+                fill="#2e1a0d" stroke="#8b4513" stroke-width="2" opacity="0.9"/>
+          <text x="720" y="440" fill="#f97316" font-size="12" font-weight="bold" text-anchor="middle" font-family="Cinzel,serif">CRIMSON</text>
+          <text x="720" y="455" fill="#f97316" font-size="12" font-weight="bold" text-anchor="middle" font-family="Cinzel,serif">DESERT</text>
+          <text x="720" y="470" fill="#fdba74" font-size="9" text-anchor="middle">Desierto carmesí</text>
+
+          <!-- REGIÓN: THE ABYSS (sur centro) -->
+          <path d="M 350,540 Q 450,510 550,540 Q 570,590 550,640 Q 490,670 420,665 Q 350,655 330,610 Q 320,570 350,540 Z"
+                fill="#1a0d2e" stroke="#6b2d8b" stroke-width="2" opacity="0.9"/>
+          <text x="445" y="605" fill="#c084fc" font-size="12" font-weight="bold" text-anchor="middle" font-family="Cinzel,serif">THE ABYSS</text>
+          <text x="445" y="620" fill="#c084fc" font-size="9" text-anchor="middle">Reino misterioso</text>
+
+          <!-- RÍOS -->
+          <path d="M 300,350 Q 380,380 410,420 Q 430,450 415,500" stroke="#1e40af" stroke-width="3" fill="none" opacity="0.6"/>
+          <text x="360" y="420" fill="#60a5fa" font-size="9" transform="rotate(-20,360,420)">Río Nas</text>
+
+          <!-- MARCADORES DE JEFES -->
+          <!-- Myurdin en Pailune -->
+          <circle cx="460" cy="120" r="10" fill="#dc2626" opacity="0.9" filter="url(#glow-red)" class="map-marker" data-name="Myurdin" data-type="boss" data-info="Líder de los Osos Negros. Jefe final." style="cursor:pointer"/>
+          <text x="460" y="124" fill="white" font-size="10" text-anchor="middle" style="pointer-events:none">👹</text>
+
+          <!-- Matthias en Hernand -->
+          <circle cx="160" cy="200" r="10" fill="#dc2626" opacity="0.9" filter="url(#glow-red)" class="map-marker" data-name="Matthias" data-type="boss" data-info="Te desafía a duelo en Hernand." style="cursor:pointer"/>
+          <text x="160" y="204" fill="white" font-size="10" text-anchor="middle" style="pointer-events:none">⚔️</text>
+
+          <!-- Kearush en Hernand -->
+          <circle cx="220" cy="160" r="10" fill="#dc2626" opacity="0.9" filter="url(#glow-red)" class="map-marker" data-name="Kearush the Slayer" data-type="boss" data-info="La bestia del Castillo de Hernand." style="cursor:pointer"/>
+          <text x="220" y="164" fill="white" font-size="10" text-anchor="middle" style="pointer-events:none">🦁</text>
+
+          <!-- Reed Devil en Demeniss -->
+          <circle cx="690" cy="200" r="10" fill="#dc2626" opacity="0.9" filter="url(#glow-red)" class="map-marker" data-name="Reed Devil" data-type="boss" data-info="El diablo de los cañaverales. Frozen Soul Mountain." style="cursor:pointer"/>
+          <text x="690" y="204" fill="white" font-size="10" text-anchor="middle" style="pointer-events:none">👹</text>
+
+          <!-- One Armed Ludvig en Demeniss -->
+          <circle cx="760" cy="160" r="10" fill="#dc2626" opacity="0.9" filter="url(#glow-red)" class="map-marker" data-name="One Armed Ludvig" data-type="boss" data-info="Sobreviviente en las montañas de Demeniss." style="cursor:pointer"/>
+          <text x="760" y="164" fill="white" font-size="10" text-anchor="middle" style="pointer-events:none">💀</text>
+
+          <!-- Marni's Excavatron en Delesyia -->
+          <circle cx="380" cy="380" r="10" fill="#dc2626" opacity="0.9" filter="url(#glow-red)" class="map-marker" data-name="Marni's Excavatron" data-type="boss" data-info="Máquina de guerra en Karin Quarry." style="cursor:pointer"/>
+          <text x="380" y="384" fill="white" font-size="10" text-anchor="middle" style="pointer-events:none">🤖</text>
+
+          <!-- MARCADORES DE PUNTOS DE FAST TRAVEL (Abyss Traces) -->
+          <circle cx="200" cy="230" r="8" fill="#7c3aed" opacity="0.8" filter="url(#glow-gold)" class="map-marker" data-name="Rastro del Abismo - Hernand" data-type="fast-travel" data-info="Punto de viaje rápido en Hernand." style="cursor:pointer"/>
+          <text x="200" y="234" fill="white" font-size="9" text-anchor="middle" style="pointer-events:none">⚡</text>
+
+          <circle cx="490" cy="170" r="8" fill="#7c3aed" opacity="0.8" filter="url(#glow-gold)" class="map-marker" data-name="Rastro del Abismo - Pailune" data-type="fast-travel" data-info="Punto de viaje rápido en Pailune." style="cursor:pointer"/>
+          <text x="490" y="174" fill="white" font-size="9" text-anchor="middle" style="pointer-events:none">⚡</text>
+
+          <circle cx="440" cy="450" r="8" fill="#7c3aed" opacity="0.8" class="map-marker" data-name="Rastro del Abismo - Delesyia" data-type="fast-travel" data-info="Punto de viaje rápido en Delesyia." style="cursor:pointer"/>
+          <text x="440" y="454" fill="white" font-size="9" text-anchor="middle" style="pointer-events:none">⚡</text>
+
+          <!-- CAMPAMENTO GREYMANE -->
+          <rect x="120" y="210" width="30" height="22" rx="4" fill="#16a34a" opacity="0.9" class="map-marker" data-name="Campamento Greymane" data-type="camp" data-info="Tu base de operaciones en Hernand." style="cursor:pointer"/>
+          <text x="135" y="225" fill="white" font-size="11" text-anchor="middle" style="pointer-events:none">🏕️</text>
+
+          <!-- PUERTA DEL ABISMO -->
+          <circle cx="445" cy="580" r="12" fill="#581c87" stroke="#c084fc" stroke-width="2" opacity="0.9" class="map-marker" data-name="Puerta del Abismo" data-type="abyss" data-info="Entrada al reino del Abismo. Contiene el mejor equipo." style="cursor:pointer"/>
+          <text x="445" y="585" fill="white" font-size="12" text-anchor="middle" style="pointer-events:none">🌀</text>
+
+          <!-- NAS RIVER DOCK -->
+          <rect x="385" y="440" width="30" height="22" rx="4" fill="#0369a1" opacity="0.9" class="map-marker" data-name="Nas River Fishing Dock" data-type="npc" data-info="Aprendé pesca aquí. Ingredientes para cocinar." style="cursor:pointer"/>
+          <text x="400" y="455" fill="white" font-size="11" text-anchor="middle" style="pointer-events:none">🎣</text>
+
+          <!-- LEYENDA EN EL MAPA -->
+          <rect x="820" y="560" width="160" height="120" rx="6" fill="rgba(13,8,16,0.85)" stroke="rgba(180,50,30,0.3)" stroke-width="1"/>
+          <text x="900" y="578" fill="#d4a820" font-size="11" font-weight="bold" text-anchor="middle" font-family="Cinzel,serif">LEYENDA</text>
+          <circle cx="840" cy="594" r="6" fill="#dc2626"/><text x="852" y="598" fill="#f0e8dc" font-size="10">Jefes</text>
+          <circle cx="840" cy="612" r="6" fill="#7c3aed"/><text x="852" y="616" fill="#f0e8dc" font-size="10">Viaje rápido</text>
+          <rect x="834" y="624" width="12" height="10" rx="2" fill="#16a34a"/><text x="852" y="633" fill="#f0e8dc" font-size="10">Campamento</text>
+          <circle cx="840" cy="650" r="6" fill="#581c87" stroke="#c084fc" stroke-width="1"/><text x="852" y="654" fill="#f0e8dc" font-size="10">Abismo</text>
+          <rect x="834" y="660" width="12" height="10" rx="2" fill="#0369a1"/><text x="852" y="669" fill="#f0e8dc" font-size="10">NPC / Lugar</text>
+        </svg>
+
+        <!-- TOOLTIP -->
+        <div id="map-tooltip" style="display:none;position:absolute;background:rgba(13,8,16,0.95);border:1px solid rgba(180,50,30,0.5);border-radius:8px;padding:10px 14px;pointer-events:none;z-index:10;max-width:200px">
+          <div id="tooltip-name" style="font-weight:700;font-size:13px;color:#d4a820;margin-bottom:4px"></div>
+          <div id="tooltip-type" style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px"></div>
+          <div id="tooltip-info" style="font-size:12px;color:#9a8a7a;line-height:1.5"></div>
+        </div>
+
+        <!-- TÍTULO DEL MAPA -->
+        <div style="position:absolute;top:12px;left:16px;font-family:Cinzel,serif;font-size:16px;font-weight:700;color:#d4a820;text-shadow:0 2px 8px rgba(0,0,0,0.8);pointer-events:none">
+          🗺️ Continente de Pywel
+        </div>
+      </div>
     </div>
+
+    <script>
+    // Tooltips del mapa
+    document.querySelectorAll('.map-marker').forEach(marker => {
+      marker.addEventListener('mouseenter', function(e) {
+        const tooltip = document.getElementById('map-tooltip');
+        document.getElementById('tooltip-name').textContent = this.dataset.name;
+        const types = {boss:'👹 Jefe',camp:'🏕️ Campamento','fast-travel':'⚡ Viaje rápido',abyss:'🌀 Abismo',npc:'🧑 NPC / Lugar'};
+        document.getElementById('tooltip-type').textContent = types[this.dataset.type] || this.dataset.type;
+        document.getElementById('tooltip-info').textContent = this.dataset.info;
+        const colors = {boss:'#fca5a5',camp:'#86efac','fast-travel':'#c084fc',abyss:'#d8b4fe',npc:'#93c5fd'};
+        document.getElementById('tooltip-type').style.color = colors[this.dataset.type] || '#d4a820';
+        const rect = this.closest('#map-container').getBoundingClientRect();
+        const mRect = this.getBoundingClientRect();
+        tooltip.style.left = (mRect.left - rect.left + 15) + 'px';
+        tooltip.style.top = (mRect.top - rect.top - 10) + 'px';
+        tooltip.style.display = 'block';
+      });
+      marker.addEventListener('mouseleave', function() {
+        document.getElementById('map-tooltip').style.display = 'none';
+      });
+    });
+    </script>
     <!-- Leyenda de íconos del mapa -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:16px">
       <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;align-items:center;gap:10px">
