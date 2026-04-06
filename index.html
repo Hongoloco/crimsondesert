@@ -902,28 +902,166 @@ function closeMobile() {
       </div>
     </div>
 
-    <!-- MAPA WAND (WeMod) -->
+    <!-- MAPA LEAFLET INTERACTIVO -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <div style="margin-top:32px" class="fade-up">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px">
         <div>
-          <div class="section-tag" style="margin-bottom:6px">🗺️ Mapa interactivo oficial — Wand (WeMod)</div>
-          <p style="color:var(--text2);font-size:13px">Mapa completo con checklist de 100%. Marcá cada coleccionable directamente.</p>
+          <div class="section-tag" style="margin-bottom:6px">🗺️ Mapa interactivo de Pywel</div>
+          <p style="color:var(--text2);font-size:13px">Zoom, filtros por categoría y marcadores de todos los puntos de interés.</p>
         </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <a href="https://wand.com/maps/crimson-desert/pywel" target="_blank" class="btn-secondary" style="font-size:12px">🗺️ Mapa completo ↗</a>
-          <a href="https://wand.com/maps/crimson-desert/pywel/checklist" target="_blank" class="btn-primary" style="font-size:12px">✅ Checklist 100% ↗</a>
-        </div>
+        <a href="https://wand.com/maps/crimson-desert/pywel" target="_blank" class="btn-secondary" style="font-size:12px">🗺️ Ver en Wand ↗</a>
       </div>
-      <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border2);box-shadow:0 8px 32px rgba(0,0,0,0.4)">
-        <iframe
-          src="https://wand.com/maps/crimson-desert/pywel"
-          style="width:100%;height:650px;border:none;display:block;background:#0a0508"
-          title="Mapa interactivo de Pywel - Wand"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+
+      <!-- FILTROS -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px" id="map-filters">
+        <button onclick="toggleFilter('boss')" id="f-boss" class="map-filter active" data-active="true"
+          style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid rgba(220,38,38,0.4);background:rgba(220,38,38,0.2);color:#fca5a5;transition:all .2s">
+          👹 Jefes
+        </button>
+        <button onclick="toggleFilter('fast-travel')" id="f-fast-travel" class="map-filter active" data-active="true"
+          style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid rgba(124,58,237,0.4);background:rgba(124,58,237,0.2);color:#c084fc;transition:all .2s">
+          ⚡ Viaje rápido
+        </button>
+        <button onclick="toggleFilter('bell')" id="f-bell" class="map-filter active" data-active="true"
+          style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid rgba(212,168,32,0.4);background:rgba(212,168,32,0.2);color:#fde68a;transition:all .2s">
+          🔔 Campanas
+        </button>
+        <button onclick="toggleFilter('abyss')" id="f-abyss" class="map-filter active" data-active="true"
+          style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid rgba(88,28,135,0.6);background:rgba(88,28,135,0.3);color:#d8b4fe;transition:all .2s">
+          🌀 Abismo
+        </button>
+        <button onclick="toggleFilter('npc')" id="f-npc" class="map-filter active" data-active="true"
+          style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid rgba(6,182,212,0.4);background:rgba(6,182,212,0.2);color:#67e8f9;transition:all .2s">
+          🧑 NPCs
+        </button>
+        <button onclick="toggleFilter('camp')" id="f-camp" class="map-filter active" data-active="true"
+          style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid rgba(16,185,129,0.4);background:rgba(16,185,129,0.2);color:#6ee7b7;transition:all .2s">
+          🏕️ Campamento
+        </button>
+        <button onclick="toggleAllFilters()" 
+          style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s;margin-left:auto">
+          👁️ Mostrar todo
+        </button>
       </div>
+
+      <!-- MAPA -->
+      <div id="leaflet-map" style="width:100%;height:600px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border2);box-shadow:0 8px 32px rgba(0,0,0,0.5)"></div>
     </div>
+
+    <script>
+    // Inicializar mapa Leaflet con imagen de Pywel
+    const mapBounds = [[0,0],[630,1200]];
+    const pywelMap = L.map('leaflet-map', {
+      crs: L.CRS.Simple,
+      minZoom: -2,
+      maxZoom: 3,
+      zoomControl: true,
+      attributionControl: false,
+      maxBounds: [[-100,-100],[730,1300]],
+    });
+
+    L.imageOverlay('pywel-map.jpg', mapBounds).addTo(pywelMap);
+    pywelMap.fitBounds(mapBounds);
+
+    // Iconos personalizados
+    function makeIcon(emoji, color) {
+      return L.divIcon({
+        html: `<div style="width:32px;height:32px;border-radius:50%;background:${color};display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid rgba(255,255,255,0.3);box-shadow:0 2px 8px rgba(0,0,0,0.6)">${emoji}</div>`,
+        iconSize:[32,32], iconAnchor:[16,16], popupAnchor:[0,-16], className:''
+      });
+    }
+
+    const icons = {
+      boss:         makeIcon('👹','rgba(220,38,38,0.85)'),
+      'fast-travel':makeIcon('⚡','rgba(124,58,237,0.85)'),
+      bell:         makeIcon('🔔','rgba(212,168,32,0.85)'),
+      abyss:        makeIcon('🌀','rgba(88,28,135,0.85)'),
+      npc:          makeIcon('🧑','rgba(6,182,212,0.85)'),
+      camp:         makeIcon('🏕️','rgba(16,185,129,0.85)'),
+    };
+
+    // Marcadores (coordenadas en píxeles sobre la imagen 1200x630)
+    const markers = [
+      // JEFES
+      {type:'boss', y:180, x:380, name:'Myurdin', info:'Líder de los Osos Negros. Jefe final del juego.'},
+      {type:'boss', y:220, x:200, name:'Matthias', info:'Te desafía a duelo en la plaza de Hernand.'},
+      {type:'boss', y:180, x:250, name:'Kearush the Slayer', info:'La bestia del Castillo de Hernand.'},
+      {type:'boss', y:150, x:680, name:'Reed Devil', info:'El diablo de los cañaverales. Frozen Soul Mountain.'},
+      {type:'boss', y:110, x:760, name:'One Armed Ludvig', info:'Sobreviviente en las montañas de Demeniss.'},
+      {type:'boss', y:370, x:340, name:"Marni's Excavatron", info:'Máquina de guerra en Karin Quarry.'},
+      {type:'boss', y:290, x:460, name:'Tenebrum', info:'Invocado en el Scholastone Institute.'},
+      {type:'boss', y:200, x:470, name:'Draven the Crowcaller', info:'Líder de los Crow Brothers.'},
+      // VIAJE RÁPIDO
+      {type:'fast-travel', y:255, x:210, name:'Rastro del Abismo — Hernand', info:'Punto de viaje rápido en Hernand.'},
+      {type:'fast-travel', y:195, x:460, name:'Rastro del Abismo — Pailune', info:'Punto de viaje rápido en Pailune.'},
+      {type:'fast-travel', y:420, x:415, name:'Rastro del Abismo — Delesyia', info:'Punto de viaje rápido en Delesyia.'},
+      {type:'fast-travel', y:480, x:680, name:'Rastro del Abismo — C. Desert', info:'Punto de viaje rápido en Crimson Desert.'},
+      {type:'fast-travel', y:565, x:445, name:'Nexo del Abismo', info:'Nexo central del reino del Abismo.'},
+      // CAMPANAS
+      {type:'bell', y:150, x:170, name:'Campana — Torre Norte Hernand', info:'Campana 1/8. Región de Hernand.'},
+      {type:'bell', y:195, x:220, name:'Campana — Castillo Hernand', info:'Campana 2/8. En el castillo principal.'},
+      {type:'bell', y:240, x:165, name:'Campana — Pueblo viejo Hernand', info:'Campana 3/8. En las ruinas del pueblo.'},
+      {type:'bell', y:145, x:410, name:'Campana — Plaza central Pailune', info:'Campana 4/8. En la plaza principal.'},
+      {type:'bell', y:175, x:490, name:'Campana — Fortaleza Pailune', info:'Campana 5/8. En la fortaleza.'},
+      {type:'bell', y:95, x:700, name:'Campana — Cima nevada Demeniss', info:'Campana 6/8. En la cima de la montaña.'},
+      {type:'bell', y:145, x:760, name:'Campana — Cueva glacial Demeniss', info:'Campana 7/8. Dentro de la cueva.'},
+      {type:'bell', y:435, x:370, name:'Campana — Orilla Río Nas Delesyia', info:'Campana 8/8. Junto al río.'},
+      // ABISMO
+      {type:'abyss', y:560, x:440, name:'Puerta del Abismo', info:'Entrada al reino del Abismo. Mejor equipo del juego.'},
+      {type:'abyss', y:250, x:200, name:'Artefacto del Abismo #1', info:'Hernand Ruinas. Mejora habilidades.'},
+      {type:'abyss', y:175, x:245, name:'Artefacto del Abismo #2', info:'Hernand Castillo.'},
+      {type:'abyss', y:130, x:410, name:'Artefacto del Abismo #3', info:'Pailune Norte.'},
+      {type:'abyss', y:200, x:480, name:'Artefacto del Abismo #4', info:'Pailune Sur.'},
+      {type:'abyss', y:120, x:710, name:'Artefacto del Abismo #5', info:'Demeniss Montaña.'},
+      {type:'abyss', y:165, x:755, name:'Artefacto del Abismo #6', info:'Demeniss Valle.'},
+      {type:'abyss', y:405, x:440, name:'Artefacto del Abismo #7', info:'Delesyia Bosque.'},
+      {type:'abyss', y:450, x:700, name:'Artefacto del Abismo #8', info:'Crimson Desert.'},
+      // NPCs Y SERVICIOS
+      {type:'npc', y:420, x:375, name:'Nas River Fishing Dock', info:'Aprendé pesca aquí. Ingredientes de cocina.'},
+      {type:'npc', y:200, x:165, name:'Herrero — Hernand', info:'Repara y mejora equipamiento.'},
+      {type:'npc', y:175, x:430, name:'Posada — Pailune', info:'Descanso y misiones secundarias.'},
+      {type:'npc', y:145, x:700, name:'Mercader — Demeniss', info:'Vende equipo de montaña.'},
+      // CAMPAMENTO
+      {type:'camp', y:235, x:155, name:'Campamento Greymane', info:'Tu base de operaciones. Mejorala para desbloquear nuevas funciones.'},
+    ];
+
+    // Crear capas por tipo
+    const layers = {};
+    const markerRefs = {};
+    markers.forEach((m,i) => {
+      if (!layers[m.type]) layers[m.type] = [];
+      const lm = L.marker([630-m.y, m.x], {icon: icons[m.type]})
+        .bindPopup(`<div style="font-family:Inter,sans-serif;min-width:160px">
+          <div style="font-weight:700;font-size:13px;margin-bottom:4px">${m.name}</div>
+          <div style="font-size:12px;color:#666">${m.info}</div>
+        </div>`, {maxWidth:220});
+      layers[m.type].push(lm);
+      markerRefs[i] = lm;
+      lm.addTo(pywelMap);
+    });
+
+    // Filtros
+    const filterState = {};
+    function toggleFilter(type) {
+      const btn = document.getElementById('f-'+type);
+      const active = btn.dataset.active === 'true';
+      btn.dataset.active = !active;
+      btn.style.opacity = active ? '0.4' : '1';
+      (layers[type]||[]).forEach(m => active ? pywelMap.removeLayer(m) : m.addTo(pywelMap));
+    }
+
+    function toggleAllFilters() {
+      ['boss','fast-travel','bell','abyss','npc','camp'].forEach(type => {
+        const btn = document.getElementById('f-'+type);
+        btn.dataset.active = 'true';
+        btn.style.opacity = '1';
+        (layers[type]||[]).forEach(m => m.addTo(pywelMap));
+      });
+    }
+    </script>
 
     <script>
     // Tooltips del mapa
