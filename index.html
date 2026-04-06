@@ -299,6 +299,7 @@ footer a{color:var(--gold);text-decoration:none}
       <a href="#">👹 Combate <span class="arrow">▼</span></a>
       <div class="dropdown">
         <a href="#jefes"><span>👹</span>Jefes (Bosses)</a>
+        <a href="#habilidades"><span>⚡</span>Habilidades</a>
         <a href="#tips"><span>💡</span>Tips y consejos</a>
         <a href="#novedades"><span>🔄</span>Parche 1.00.03</a>
       </div>
@@ -332,6 +333,7 @@ footer a{color:var(--gold);text-decoration:none}
   <a href="#mecanicas" onclick="closeMobile()">⚙️ Mecánicas</a>
   <div class="mobile-section">👹 Combate</div>
   <a href="#jefes" onclick="closeMobile()">👹 Jefes (Bosses)</a>
+  <a href="#habilidades" onclick="closeMobile()">⚡ Habilidades</a>
   <a href="#tips" onclick="closeMobile()">💡 Tips y consejos</a>
   <a href="#novedades" onclick="closeMobile()">🔄 Parche 1.00.03</a>
   <div class="mobile-section">🗝️ Guías</div>
@@ -562,6 +564,41 @@ function closeMobile() {
       <h3>Puertas del Abismo (Abyss Gates)</h3>
       <p>Las puertas místicas del Abismo se encuentran ocultas en Pywel. Atravesarlas te lleva a un reino misterioso con los mejores items del juego (Abyss Gear). El Abismo contiene poder puro e indomable — preparate bien antes de entrar.</p>
     </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🧠 Lore</div>
+      <h3>Memory Fragments — 12 fragmentos de memoria</h3>
+      <p>12 fragmentos de memoria dispersos por Pywel que revelan lore oculto sobre el mundo y sus personajes. Cada fragmento amplía la narrativa más allá de la historia principal.</p>
+    </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🚪 Zonas secretas</div>
+      <h3>Hidden Spaces — 3 espacios ocultos</h3>
+      <p>Hay 3 espacios ocultos con loot exclusivo que no encontrarás en ningún otro lugar. Buscalos detrás de cascadas y paredes falsas. Se activan con interacciones específicas del entorno.</p>
+    </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🐺 Clan</div>
+      <h3>Greymane Shrine — Santuario del clan</h3>
+      <p>1 santuario Greymane oculto con recompensas especiales exclusivas para el clan. Buscalo en una zona con emblemas del lobo gris.</p>
+    </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">💰 Mercado Negro</div>
+      <h3>Black Market — Items únicos</h3>
+      <p>Hay un Mercado Negro oculto con items únicos que no se pueden encontrar en tiendas normales. Su ubicación cambia. Hablá con NPCs sospechosos en las ciudades para encontrarlo.</p>
+    </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🔐 Cofre especial</div>
+      <h3>Strongbox — El cofre fuerte misterioso</h3>
+      <p>1 cofre fuerte con contenido misterioso. Solo se abre con la llave correcta. La llave se obtiene completando una cadena de misiones secundarias muy específica.</p>
+    </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🗺️ Tesoros</div>
+      <h3>Treasure Maps — 3 mapas del tesoro</h3>
+      <p>3 mapas del tesoro que llevan a ubicaciones específicas con loot épico. Encontralos en cofres y en manos de ciertos enemigos derrotados.</p>
+    </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🚪 Pasajes ocultos</div>
+      <h3>Hidden Entrances — 6 entradas secretas</h3>
+      <p>6 entradas ocultas a zonas secretas dispersas por todo Pywel. Buscalas detrás de vegetación, bajo el agua y detrás de objetos interactivos del entorno.</p>
+    </div>
   </div>
 </section>
 
@@ -571,67 +608,281 @@ function closeMobile() {
 <section id="builds">
   <div class="section-tag">Estrategia</div>
   <div class="section-title">Builds recomendados</div>
-  <p class="section-sub">Combinaciones de armas y equipamiento para diferentes estilos de juego.</p>
+  <p class="section-sub">Combinaciones de armas, habilidades y equipamiento para diferentes estilos de juego.</p>
   <div class="builds-grid">
     <div class="build-card fade-up">
       <div class="build-icon">⚔️</div>
-      <h3>El Guerrero</h3>
-      <p>Espadón de dos manos + escudo de respaldo. Armadura pesada corporal. Máximo daño en combate frontal. Perfecto para bosses y duelos.</p>
+      <h3>El Guerrero Imparable</h3>
+      <p>Espadón dos manos + Armed Combat maxeado + Charge + Rush. Armadura pesada. Alta vida. Para jugadores que quieren daño masivo y romper guardias. Mejor contra jefes lentos.</p>
       <div class="build-tags">
         <span class="build-tag">Greatsword</span>
         <span class="build-tag">Heavy Armor</span>
-        <span class="build-tag">Body Armor</span>
+        <span class="build-tag">Rompe guardias</span>
       </div>
     </div>
     <div class="build-card fade-up">
       <div class="build-icon">🌪️</div>
-      <h3>El Danzante</h3>
-      <p>Dual wield (espada + espada). Armadura ligera. Máxima velocidad y combo. Ideal para jugadores que prefieren golpear rápido y esquivar.</p>
+      <h3>El Danzante de Hojas</h3>
+      <p>Dual swords + Spinning Slash + Evasive Slash + Quick Swap. Armadura ligera. Máxima velocidad. Para combos rápidos y esquivar. Mejor para jefes ágiles.</p>
       <div class="build-tags">
         <span class="build-tag">Dual Swords</span>
         <span class="build-tag">Light Armor</span>
-        <span class="build-tag">Fast Boots</span>
+        <span class="build-tag">Máxima velocidad</span>
       </div>
     </div>
     <div class="build-card fade-up">
-      <div class="build-icon">🏹</div>
-      <h3>El Cazador</h3>
-      <p>Arco principal + daga para sigilo. Armadura media. Enfocado en eliminar enemigos antes de ser detectado. Muy efectivo con acertijos.</p>
+      <div class="build-icon">🗡️</div>
+      <h3>El Depredador Silencioso</h3>
+      <p>Daga + Arco + Evasive Shot + Multishot + Charged Shot. Armadura media. Sigilo y distancia. Ideal para ejecuciones sigilosas y combate a distancia. El mejor build para exploración.</p>
       <div class="build-tags">
-        <span class="build-tag">Bow</span>
-        <span class="build-tag">Dagger</span>
-        <span class="build-tag">Medium Armor</span>
+        <span class="build-tag">Daga</span>
+        <span class="build-tag">Arco</span>
+        <span class="build-tag">Sigilo</span>
       </div>
     </div>
     <div class="build-card fade-up">
       <div class="build-icon">💥</div>
       <h3>El Artillero</h3>
-      <p>Cañón de mano + espada de respaldo. Armadura media-pesada. Ideal para grupos de enemigos y jefes grandes. Máximo daño por disparo.</p>
+      <p>Hand Cannon + Forward Slash + Body Slam. Armadura media-pesada. Alto daño por disparo. Interrumpe ataques de jefes. Mejor contra grupos y jefes grandes.</p>
       <div class="build-tags">
         <span class="build-tag">Hand Cannon</span>
-        <span class="build-tag">Sword backup</span>
-        <span class="build-tag">Heavy Gloves</span>
+        <span class="build-tag">Body Slam</span>
+        <span class="build-tag">Anti-grupos</span>
       </div>
     </div>
     <div class="build-card fade-up">
       <div class="build-icon">👊</div>
-      <h3>El Peleador</h3>
-      <p>Combate sin armas + maza de respaldo. Domina los agarres y el combate cuerpo a cuerpo sin armas. Estilo único y devastador.</p>
+      <h3>El Luchador Callejero</h3>
+      <p>Unarmed Combat maxeado + Grappling + Pump Kick + Dropkick + Giant Swing + Scissor Takedown. Sin armas o maza de respaldo. Estilo único devastador para humanos y humanoides.</p>
       <div class="build-tags">
         <span class="build-tag">Unarmed</span>
-        <span class="build-tag">Mace</span>
-        <span class="build-tag">Combat Gloves</span>
+        <span class="build-tag">Grappling</span>
+        <span class="build-tag">Anti-humanoides</span>
       </div>
     </div>
     <div class="build-card fade-up">
       <div class="build-icon">💜</div>
       <h3>El Explorador del Abismo</h3>
-      <p>Equipamiento del Abismo (Abyss Gear) en slots principales. Máximas stats pero difícil de conseguir. Para jugadores avanzados.</p>
+      <p>Abyss Gear completo + Blinding Flash + Armed Combat maxeado. Todo el equipamiento del Abismo. El build más poderoso del late game. Requiere recolectar todos los artefactos.</p>
       <div class="build-tags">
         <span class="build-tag">Abyss Gear</span>
-        <span class="build-tag">Abyss Weapon</span>
         <span class="build-tag">Late Game</span>
+        <span class="build-tag">El más poderoso</span>
       </div>
+    </div>
+    <div class="build-card fade-up">
+      <div class="build-icon">🏹</div>
+      <h3>El Arquero Maestro</h3>
+      <p>Arco + Marksmanship maxeado + Multishot + Evasive Shot + Explosive Evasive Shot. Armadura ligera. Máximo DPS a distancia. Ideal para zonas abiertas y jefes lentos.</p>
+      <div class="build-tags">
+        <span class="build-tag">Bow</span>
+        <span class="build-tag">Marksmanship</span>
+        <span class="build-tag">Máximo DPS</span>
+      </div>
+    </div>
+    <div class="build-card fade-up">
+      <div class="build-icon">🛡️</div>
+      <h3>El Caballero Defensivo</h3>
+      <p>Espada + Escudo + Shield Bash + Charge + Blinding Flash. Armadura pesada. Máxima defensa y contraataques. Para jugadores que prefieren bloquearlo todo.</p>
+      <div class="build-tags">
+        <span class="build-tag">Espada + Escudo</span>
+        <span class="build-tag">Shield Bash</span>
+        <span class="build-tag">Máxima defensa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HABILIDADES -->
+<section id="habilidades" style="background:var(--surface)">
+  <div class="section-tag">⚡ Sistema de combate</div>
+  <div class="section-title">Habilidades de Kliff</div>
+  <p class="section-sub">El árbol de habilidades de Kliff se divide en 3 ramas: <strong style="color:#60a5fa">Azul (Stamina)</strong>, <strong style="color:#f87171">Rojo (Salud)</strong> y <strong style="color:#4ade80">Verde (Spirit)</strong>. Se desbloquean con Abyss Artifacts. Algunas se aprenden observando enemigos en combate o completando misiones.</p>
+
+  <div style="margin-top:40px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">⚔️ Melee básico</span>
+        <h3>Armed Combat</h3>
+        <p>Ataque básico con arma cuerpo a cuerpo. La base de todo combate con armas.</p>
+        <div style="margin-top:10px;font-size:12px;color:var(--text2)"><strong style="color:var(--gold)">Sub-habilidades:</strong> Charge, Evasive Slash, Quick Swap, Rush</div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Base</span><span class="stat-pill">4 sub-skills</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🤼 Agarre</span>
+        <h3>Grappling</h3>
+        <p>Agarre básico. El sistema de grappling más completo — agarrá, controlá y lanzá enemigos.</p>
+        <div style="margin-top:10px;font-size:12px;color:var(--text2)"><strong style="color:var(--gold)">Sub-habilidades:</strong> Restrain, Throw, Lariat, Giant Swing, Back Hang, Lariat Follow-up</div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Control</span><span class="stat-pill">6 sub-skills</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">👊 Sin armas</span>
+        <h3>Unarmed Combat</h3>
+        <p>Combate sin armas. Sistema robusto de patadas y puñetazos.</p>
+        <div style="margin-top:10px;font-size:12px;color:var(--text2)"><strong style="color:var(--gold)">Sub-habilidades:</strong> Scissor Takedown (Lv2), Flying Kick (Lv4), Meteor Kick (Lv5)</div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Sin arma</span><span class="stat-pill">Escala por nivel</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🏹 A distancia</span>
+        <h3>Marksmanship</h3>
+        <p>Ataque básico con arma a distancia. La base para builds de arco y cañón.</p>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Distancia</span><span class="stat-pill">Pasivo</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🗡️ Slash potente</span>
+        <h3>Forward Slash</h3>
+        <p>R2 para un slash poderoso hacia adelante. Excelente para romper guardias.</p>
+        <div style="margin-top:10px;font-size:12px;color:var(--text2)"><strong style="color:var(--gold)">Sub-habilidades:</strong> Forward Slash Sure Hit, Forward Slash Proficiency</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:6px">Input: <strong>R2</strong></div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Rompe guardia</span><span class="stat-pill">2 sub-skills</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">💫 Slash giratorio</span>
+        <h3>Spinning Slash</h3>
+        <p>R1+X para saltar y ejecutar un slash giratorio. Ideal para daño en área contra múltiples enemigos.</p>
+        <div style="font-size:11px;color:var(--text2);margin-top:8px">Input: <strong>R1 + X</strong></div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">AoE</span><span class="stat-pill">Movilidad</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🌟 Misión especial</span>
+        <h3>Blinding Flash</h3>
+        <p>L1+R1 para cegar a los enemigos. Se obtiene completando la misión <strong>"Realm of Uncertainty"</strong>.</p>
+        <div style="font-size:11px;color:var(--text2);margin-top:8px">Input: <strong>L1 + R1</strong> | Desbloqueo: Misión</div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Cegar</span><span class="stat-pill">Control</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🏃 Esquivar + disparar</span>
+        <h3>Evasive Shot</h3>
+        <p>Esquivá y dispará una flecha simultáneamente. Perfecto para mantener distancia mientras te movés.</p>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Distancia</span><span class="stat-pill">Evasión</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🎯 Lluvia de flechas</span>
+        <h3>Multishot</h3>
+        <p>R1 mientras apuntás para disparar 10 flechas en abanico. Devastador contra grupos de enemigos.</p>
+        <div style="font-size:11px;color:var(--text2);margin-top:8px">Input: <strong>R1</strong> (mientras apunta)</div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">10 flechas</span><span class="stat-pill">Anti-grupos</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🦵 Aprendida de jefe</span>
+        <h3>Pump Kick</h3>
+        <p>Patada poderosa de dos pies. Se aprende observando y derrotando a <strong>Matthias</strong>.</p>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Patada doble</span><span class="stat-pill">Aprende de Matthias</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🦵 Lanzar enemigo</span>
+        <h3>Dropkick</h3>
+        <p>Doble patada que envía volando al enemigo. Excelente para alejar enemigos o lanzarlos contra otros.</p>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Knockback</span><span class="stat-pill">Unarmed</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">💥 Desde el aire</span>
+        <h3>Body Slam</h3>
+        <p>Caer con todo el peso desde el aire sobre el enemigo. Daño masivo de impacto en área pequeña.</p>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Aerial</span><span class="stat-pill">AoE pequeño</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">👟 Corriendo</span>
+        <h3>Clothesline</h3>
+        <p>Enganchar al enemigo corriendo y lanzarlo al suelo. Letal cuando el enemigo está de pie cerca de un borde.</p>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Knockdown</span><span class="stat-pill">En movimiento</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🏹 Máxima carga</span>
+        <h3>Charged Shot</h3>
+        <p>Mantené R2 para cargar al máximo y disparar una flecha de daño masivo. Rompe escudos y guardias a distancia.</p>
+        <div style="font-size:11px;color:var(--text2);margin-top:8px">Input: <strong>Mantener R2</strong></div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Carga</span><span class="stat-pill">Alto daño</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🌀 Lanzar girando</span>
+        <h3>Giant Swing</h3>
+        <p>Agarrá al enemigo y lanzalo girando. Daño masivo al enemigo que lanzás y a los que impacta.</p>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Grappling</span><span class="stat-pill">Daño cadena</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🗡️ Estocada</span>
+        <h3>Stab</h3>
+        <p>Estocada directa. La versión Lv2 (<strong>Skewering Stab</strong>) agarra al enemigo en la hoja — ideal para ejecutar o posicionarlo.</p>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Agarre (Lv2)</span><span class="stat-pill">Posicionamiento</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">🛡️ Contraataque</span>
+        <h3>Shield Bash</h3>
+        <p>L1+R2 para golpear con el escudo. Interrumpe ataques y aturde enemigos. Requiere escudo equipado.</p>
+        <div style="font-size:11px;color:var(--text2);margin-top:8px">Input: <strong>L1 + R2</strong></div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Stun</span><span class="stat-pill">Requiere escudo</span>
+        </div>
+      </div>
+
+      <div class="weapon-card fade-up">
+        <span class="weapon-type">✈️ Aéreo</span>
+        <h3>Aerial Stab</h3>
+        <p>R1+△ en el aire para ejecutar una estocada frontal descendente. Combina perfectamente con saltos y posicionamiento elevado.</p>
+        <div style="font-size:11px;color:var(--text2);margin-top:8px">Input: <strong>R1 + △</strong> (en el aire)</div>
+        <div class="weapon-stats" style="margin-top:10px">
+          <span class="stat-pill">Aéreo</span><span class="stat-pill">Estocada</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="secret-item fade-up" style="margin-top:32px;border-left-color:var(--gold)">
+      <div class="secret-badge" style="color:var(--gold)">💡 Cómo desbloquear habilidades</div>
+      <h3>Sistema de desbloqueo</h3>
+      <p>Las habilidades se desbloquean principalmente con <strong>Abyss Artifacts</strong> dispersos por Pywel. Algunas habilidades especiales como <strong>Pump Kick</strong> se aprenden <strong>observando enemigos en combate</strong> y luego derrotándolos. <strong>Blinding Flash</strong> requiere completar la misión "Realm of Uncertainty". El árbol completo requiere exploración profunda del mundo.</p>
     </div>
   </div>
 </section>
@@ -1171,48 +1422,169 @@ function closeMobile() {
 <!-- JEFES -->
 <section id="jefes">
   <div class="section-tag">⚔️ Combate</div>
-  <div class="section-title">Jefes principales (Bosses)</div>
-  <p class="section-sub">Los jefes tienen barras de HP azul y roja. Algunos tienen 3 barras como el Staglord. Patch 1.00.03 redujo su vida y ataque.</p>
-  <div class="secrets-list" style="margin-top:40px">
-    <div class="secret-item fade-up">
-      <div class="secret-badge">🐻 Jefe final</div>
-      <h3>Myurdin — Líder de los Osos Negros</h3>
-      <p>El enemigo principal. Causó el caos en Pailune y dispersó a los Greymanes. Lo enfrentarás múltiples veces — la versión final es <strong>Lava Myurdin</strong>, mucho más poderoso con ojos de fuego. <strong>Consejo:</strong> interrumpí sus ataques pesados con timing preciso.</p>
+  <div class="section-title">Jefes (Bosses)</div>
+  <p class="section-sub">Los jefes tienen barras de HP azul y roja. Patch 1.00.03 redujo su vida y ataque. Preparate bien antes de cada encuentro.</p>
+
+  <div style="margin-top:40px">
+    <div class="section-tag" style="margin-bottom:14px">👹 Jefes Principales (Main Bosses)</div>
+    <div class="secrets-list">
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🐻 Jefe final</div>
+        <h3>Myurdin — Líder de los Osos Negros</h3>
+        <p>Causó el caos en Pailune y dispersó a los Greymanes. Lo enfrentarás múltiples veces — la versión final es <strong>Lava Myurdin</strong>, mucho más poderoso con ojos de fuego. Interrumpí sus ataques pesados con timing preciso.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">⚔️ Historia</div>
+        <h3>Matthias — Guerrero que te desafía en Hernand</h3>
+        <p>Te desafía a duelo en la plaza de Hernand. Uno de los primeros jefes importantes. Aprendé sus patrones — son más simples que los jefes tardíos. De él se aprende la habilidad <strong>Pump Kick</strong>.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🦌 Branchmaster</div>
+        <h3>Kailok the Hornsplitter — Convocado por Rakkash</h3>
+        <p>Branchmaster de alta dificultad convocado mediante un Rakkash. El Two-Hand Sword Strike puede interrumpirse con timing exacto. Si fallás el timing, mejor esquivar.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🤖 Máquina de guerra</div>
+        <h3>Marni's Excavatron — Karin Quarry</h3>
+        <p>Máquina de excavación convertida en arma de guerra por los Bleed Bandits. Enfrentala en Karin Quarry para liberar el territorio de la Casa Roberts.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">👹 Exiliado maldito</div>
+        <h3>Reed Devil — Frozen Soul Mountain</h3>
+        <p>Diablo de cañaverales con cara leprosa. Habita las montañas de Frozen Soul Mountain. Exiliado por su padre, devoto del mal. Muy veloz en combate. Patch 1.00.03 redujo las emboscadas al llegar a su zona.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🌀 Invocado</div>
+        <h3>Tenebrum — Scholastone Institute</h3>
+        <p>Convocado en el Scholastone Institute. Mata a todo el que toca. Jefe caótico que requiere movilidad constante para sobrevivir.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🦁 Bestia</div>
+        <h3>Kearush the Slayer — Castillo Hernand</h3>
+        <p>Bestia desatada en el Castillo de Hernand. Patch 1.00.03 ajustó sus patrones. Usá parrys para acumular el stun gauge rápidamente.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🐦 Líder Crow Brothers</div>
+        <h3>Draven the Crowcaller — Heaven's Gate</h3>
+        <p>Líder de los Crow Brothers. Busca abrir Heaven's Gate para liberar almas selladas y causar caos dominando el mundo con miedo. Uno de los jefes más narrativamente importantes.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🗡️ Traidor</div>
+        <h3>Cassius Morten — Alfonso Estate</h3>
+        <p>Traidor Calphadean encontrado en Alfonso Estate. Luchará con todo lo que tiene para proteger sus secretos oscuros.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">💪 Bárbaro</div>
+        <h3>Ludvig — El bárbaro con visión</h3>
+        <p>Bárbaro con visión similar a Myurdin. Tiene una <strong>forma despertada: Awakened Ludvig</strong>, que emerge tras consumir a un humano prisionero. También sobrevive como <strong>One Armed Ludvig</strong> en las montañas de Demeniss.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">💀 Sobreviviente</div>
+        <h3>One Armed Ludvig — Montañas de Demeniss</h3>
+        <p>Forma superviviente de Ludvig. Lo encontrarás en las montañas de Demeniss. Pese a haber perdido un brazo, sigue siendo una amenaza formidable.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🔥 Renacido</div>
+        <h3>Lava Myurdin — Forma ígnea</h3>
+        <p>Myurdin regresa más poderoso con ojos de fuego. Su forma más devastadora. Ataques de área masivos con lava y fuego. Requiere el mejor equipamiento del juego.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🪖 Capitán</div>
+        <h3>Gregor the Halberd of Carnage — Fort Ironclad</h3>
+        <p>Capitán que capturó Fort Ironclad. Especialista en combate con alabarda. Ataque rápido y área de daño amplia. Cuidado con sus barridos.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">👻 Poseído</div>
+        <h3>Fortain the Cursed Knight — Espíritus malditos</h3>
+        <p>Guerrero gigante poseído por espíritus malditos. Su tamaño y fuerza son colosales. Los ataques de los espíritus pueden aparecer por sorpresa desde cualquier dirección.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🩸 Duque corrupto</div>
+        <h3>Gabriel Caliburn — La masacre sangrienta</h3>
+        <p>Duque corrupto que causa una masacre sangrienta. El más alto rango entre los antagonistas humanos. Luchá con todo o perderás.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">⚖️ Heraldo</div>
+        <h3>Lucian Bastier — Inquisidores Rectos</h3>
+        <p>Heraldo de Caliburn que lidera los Inquisidores Rectos. Tiene una <strong>forma despertada: Awakened Lucian Bastier</strong>, activada por el poder del Abismo.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🔫 Tirador élite</div>
+        <h3>Walter Lanford — Alfonso Estate</h3>
+        <p>Encontrado en Alfonso Estate. Experto tirador con pistola de doble cañón. Jefe a distancia — mantenete en movimiento y cerrá la brecha rápido.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🧙 Sabio misterioso</div>
+        <h3>Master Du — Profundidades de Crimson Desert</h3>
+        <p>Sabio misterioso que habita en las profundidades de Crimson Desert. Sus técnicas de combate son únicas e impredecibles.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🦗 Mecánica voladora</div>
+        <h3>Marni's Clockwork Mantis — Turbine Airship</h3>
+        <p>Mantis mecánica voladora hallada en el Turbine airship. Ataques rápidos desde el aire. Usá armas a distancia para derribarla primero.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">✈️ Airship de batalla</div>
+        <h3>Turbine — La aeronave de guerra avanzada</h3>
+        <p>Airship de batalla avanzado. Uno de los jefes más espectaculares del juego. Destruí sus puntos débiles para desactivar sus sistemas de ataque.</p>
+      </div>
     </div>
-    <div class="secret-item fade-up">
-      <div class="secret-badge">⚔️ Historia</div>
-      <h3>Matthias — El guerrero del pueblo</h3>
-      <p>Te desafía a duelo en la plaza de Hernand. Uno de los primeros jefes importantes. Aprendé bien los patrones de combate aquí — son más simples que los jefes tardíos.</p>
+  </div>
+
+  <div style="margin-top:50px">
+    <div class="section-tag" style="margin-bottom:14px">⚔️ Jefes Secundarios (Side Bosses)</div>
+    <div class="secrets-list">
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🌑 Espíritu del vacío</div>
+        <h3>Antumbra's Sword — Juez de la Orden Antumbra</h3>
+        <p>Espíritu del vacío que actúa como juez de la Orden Antumbra. Combate místico con ataques de energía oscura.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">❄️ Espectro milenario</div>
+        <h3>Beloth the Darksworn — La cuchilla helada</h3>
+        <p>Espectro oscuro que reinó un reino por milenio usando su cuchilla helada. Uno de los jefes más antiguos y peligrosos del lore.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">☠️ Smog letal</div>
+        <h3>Crimson Nightmare — Artefacto vivo</h3>
+        <p>Artefacto de los Bleed Bandits que cobra vida con smog letal. Evitá respirar el smog a toda costa — usa movimiento rápido.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🏹 Traidora</div>
+        <h3>Crimson Warden — La mejor arquera Greymane</h3>
+        <p>La mejor arquera de los Greymanes que se convirtió en traidora. Conoce tus tácticas y las usará en tu contra.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🌙 Los tres segadores</div>
+        <h3>Full Moon Reaper / Half Moon Reaper / New Moon Reaper</h3>
+        <p>Los tres segadores lunares. Cada uno con estilo de combate diferente según la fase de la luna. Pueden aparecer en grupo o separados.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🌿 Guardián de tesoros</div>
+        <h3>Grave Walker — Criatura mística</h3>
+        <p>Criatura mística que guarda tesoros ocultos. Derrotala para acceder a loot exclusivo escondido en su guarida.</p>
+      </div>
+      <div class="secret-item fade-up">
+        <div class="secret-badge">🧊 Criatura de hielo</div>
+        <h3>Icewalker — El congelador</h3>
+        <p>Criatura de hielo que congela a sus presas. Resistencia al frío esencial. Fuego y ataques de calor son muy efectivos.</p>
+      </div>
     </div>
-    <div class="secret-item fade-up">
-      <div class="secret-badge">🦌 Jefe especial</div>
-      <h3>Kailok the Hornsplitter — El Branchmaster</h3>
-      <p>Convocado mediante un Rakkash. Jefe de alta dificultad. <strong>Tip:</strong> el Two-Hand Sword Strike del Staglord puede interrumpirse con timing exacto. Si fallás el timing, mejor esquivar.</p>
-    </div>
-    <div class="secret-item fade-up">
-      <div class="secret-badge">🤖 Máquina</div>
-      <h3>Marni's Excavatron — La máquina de guerra</h3>
-      <p>Máquina de excavación convertida en arma de guerra por los Bleed Bandits. Enfrentala en Karin Quarry para liberar el territorio de la Casa Roberts.</p>
-    </div>
-    <div class="secret-item fade-up">
-      <div class="secret-badge">👹 Maldito</div>
-      <h3>Reed Devil — El diablo de los cañaverales</h3>
-      <p>Habita las montañas de Frozen Soul Mountain. Exiliado por su padre, devoto del mal. Muy veloz en combate. <strong>Patch 1.00.03:</strong> se redujo la dificultad de los encuentros de emboscada al llegar a su zona.</p>
-    </div>
-    <div class="secret-item fade-up">
-      <div class="secret-badge">👹 Invocado</div>
-      <h3>Tenebrum — El invocado del otro mundo</h3>
-      <p>Invocado en el Scholastone Institute. Mata a todo el que toca. Jefe caótico que requiere movilidad constante para sobrevivir.</p>
-    </div>
-    <div class="secret-item fade-up">
-      <div class="secret-badge">🦁 Bestia</div>
-      <h3>Kearush the Slayer — La bestia del castillo</h3>
-      <p>Unleashed en el Castillo de Hernand. Sus patrones de ataque fueron ajustados en el Patch 1.00.03. Usá parrys para acumular el stun gauge rápidamente.</p>
-    </div>
-    <div class="secret-item fade-up">
-      <div class="secret-badge">🐦 Líder</div>
-      <h3>Draven the Crowcaller — Hermanos Crow</h3>
-      <p>Busca liberar almas del sellado Heaven's Gate para causar caos y dominar el mundo con miedo. Uno de los jefes más narrativamente importantes del juego.</p>
+  </div>
+
+  <div style="margin-top:50px">
+    <div class="section-tag" style="margin-bottom:14px">🏜️ Jefes de la Región Crimson Desert</div>
+    <div class="tips-grid" style="margin-top:0">
+      <div class="tip-card fade-up"><div class="tip-num">🐊</div><h3>Gristle the Sandfang Marauder</h3><p>Merodeador de los dientes de arena. Especialista en ataques rápidos del desierto.</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">🧙</div><h3>Master Du</h3><p>Sabio misterioso de las profundidades del desierto carmesí.</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">⚔️</div><h3>Merrick the Knight of Fortune</h3><p>Caballero de la fortuna. Combate con técnicas únicas de espadachín.</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">💪</div><h3>Muskan</h3><p>Guerrero poderoso del desierto. Fuerza bruta y resistencia excepcionales.</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">👹</div><h3>Ogre</h3><p>Ogro gigante del desierto. Ataques de área masivos. Muy lento pero devastador.</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">🌵</div><h3>Samara the Sandwatcher</h3><p>La observadora de arenas. Controla el terreno del desierto a su favor.</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">🐺</div><h3>Ravok of the Savage Fangs</h3><p>De los colmillos salvajes. Velocidad extrema y ataques en cadena.</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">🐲</div><h3>Taming Dragon</h3><p>El dragón del desierto. Uno de los jefes más espectaculares de la región.</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">🎭</div><h3>The Masked Liberator</h3><p>El liberador enmascarado. Sus motivaciones son ambiguas — ¿aliado o enemigo?</p></div>
+      <div class="tip-card fade-up"><div class="tip-num">🦀</div><h3>Queen Bismuth Oreback Crab</h3><p>La reina cangrejo de bismuto. Coraza casi impenetrable. Atacá sus puntos débiles.</p></div>
     </div>
   </div>
 </section>
