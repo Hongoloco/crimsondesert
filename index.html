@@ -267,6 +267,10 @@ footer a{color:var(--gold);text-decoration:none}
     <li><a href="#regiones">Regiones</a></li>
     <li><a href="#jefes">Jefes</a></li>
     <li><a href="#videos">Videos</a></li>
+    <li><a href="#personajes">Personajes</a></li>
+    <li><a href="#monturas">Monturas</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+    <li><a href="#trofeos">Trofeos</a></li>
   </ul>
   <div class="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -1055,6 +1059,315 @@ footer a{color:var(--gold);text-decoration:none}
     </div>
   </div>
 </section>
+
+
+<div class="divider"></div>
+
+<!-- BUSCADOR -->
+<div id="search-bar" style="position:sticky;top:62px;z-index:90;background:rgba(10,5,8,0.97);backdrop-filter:blur(20px);padding:12px 5%;border-bottom:1px solid var(--border2)">
+  <input type="text" id="global-search" placeholder="🔍 Buscar armas, jefes, secretos, regiones..." 
+    style="width:100%;padding:10px 16px;background:var(--surface2);border:1.5px solid var(--border2);border-radius:8px;color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border-color .2s"
+    oninput="searchSite(this.value)" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border2)'">
+  <div id="search-results" style="display:none;margin-top:10px;max-height:300px;overflow-y:auto"></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PERSONAJES -->
+<section id="personajes">
+  <div class="section-tag">Personajes</div>
+  <div class="section-title">Personajes principales</div>
+  <p class="section-sub">Los protagonistas y antagonistas del continente de Pywel.</p>
+  <div class="weapons-grid" style="margin-top:40px">
+    <div class="weapon-card fade-up">
+      <span class="weapon-type">⚔️ Protagonista</span>
+      <h3>Kliff</h3>
+      <p>Líder de los Greymanes. Guerrero excepcional en busca de venganza tras la emboscada de los Osos Negros. Domina todo tipo de armas y combate sin armamento.</p>
+      <div class="weapon-stats"><span class="stat-pill">Combate versátil</span><span class="stat-pill">Liderazgo</span><span class="stat-pill">Protagonista</span></div>
+    </div>
+    <div class="weapon-card fade-up">
+      <span class="weapon-type">💪 Aliado</span>
+      <h3>Oongka</h3>
+      <p>El más fiel de los Greymanes. Especialista en fuerza bruta y combate cuerpo a cuerpo. Siempre al lado de Kliff en los momentos más difíciles.</p>
+      <div class="weapon-stats"><span class="stat-pill">Fuerza bruta</span><span class="stat-pill">Resistencia</span><span class="stat-pill">Cuerpo a cuerpo</span></div>
+    </div>
+    <div class="weapon-card fade-up">
+      <span class="weapon-type">🧙 Apoyo</span>
+      <h3>Damiane</h3>
+      <p>Miembro de los Greymanes con habilidades únicas. Especialista en soporte táctico y habilidades especiales que complementan el equipo.</p>
+      <div class="weapon-stats"><span class="stat-pill">Habilidades únicas</span><span class="stat-pill">Soporte táctico</span><span class="stat-pill">Versatilidad</span></div>
+    </div>
+    <div class="weapon-card fade-up">
+      <span class="weapon-type">🏹 Ágil</span>
+      <h3>Naira</h3>
+      <p>Guerrera ágil del grupo Greymane. Especialista en combate a distancia y movimiento rápido. Ideal para flanqueos y ataques sorpresa.</p>
+      <div class="weapon-stats"><span class="stat-pill">Agilidad</span><span class="stat-pill">Distancia</span><span class="stat-pill">Flanqueo</span></div>
+    </div>
+    <div class="weapon-card fade-up" style="border-color:rgba(192,57,43,0.4)">
+      <span class="weapon-type" style="background:rgba(192,57,43,0.2);border-color:var(--red)">🐻 Antagonista</span>
+      <h3>Myurdin</h3>
+      <p>Líder de los Osos Negros. Causó la destrucción de los Greymanes. El enemigo principal de Kliff. Aparece en múltiples formas durante el juego incluyendo Lava Myurdin.</p>
+      <div class="weapon-stats"><span class="stat-pill">Jefe final</span><span class="stat-pill">Múltiples fases</span><span class="stat-pill">Osos Negros</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MONTURAS -->
+<section id="monturas" style="background:var(--surface)">
+  <div class="section-tag">Exploración</div>
+  <div class="section-title">Monturas</div>
+  <p class="section-sub">Explorá Pywel a lomo de bestias y máquinas. Cada montura tiene ventajas únicas.</p>
+  <div class="armor-grid" style="margin-top:40px">
+    <div class="armor-card fade-up">
+      <div style="font-size:48px;margin-bottom:14px;text-align:center">🐴</div>
+      <span class="armor-slot">Primera montura</span>
+      <h3>Caballo</h3>
+      <p>Tu primera montura. La conseguís siguiendo a un explorador desde el Deepfog Basin al inicio del juego. Velocidad media, buena stamina. Recuperala en depósitos de suministros si la perdés en combate.</p>
+    </div>
+    <div class="armor-card fade-up">
+      <div style="font-size:48px;margin-bottom:14px;text-align:center">🐺</div>
+      <span class="armor-slot">Combate</span>
+      <h3>Lobo</h3>
+      <p>Montura ágil ideal para terreno difícil y combate. Más rápida que el caballo en zonas escarpadas. Perfecta para zonas de montaña como Demeniss.</p>
+    </div>
+    <div class="armor-card fade-up">
+      <div style="font-size:48px;margin-bottom:14px;text-align:center">🐉</div>
+      <span class="armor-slot">Épica — Late game</span>
+      <h3>Dragón</h3>
+      <p>La montura más épica del juego. Se desbloquea avanzado el juego. Permite vuelo limitado sobre el mapa de Pywel. Ideal para exploración de zonas inaccesibles.</p>
+    </div>
+    <div class="armor-card fade-up">
+      <div style="font-size:48px;margin-bottom:14px;text-align:center">🤖</div>
+      <span class="armor-slot">Mecánica</span>
+      <h3>Máquina</h3>
+      <p>Vehículo mecánico de alta resistencia. Ideal para zonas industriales y combate pesado. Menor velocidad pero enorme durabilidad y poder de carga.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHECKLIST -->
+<section id="checklist">
+  <div class="section-tag">Progreso</div>
+  <div class="section-title">Tu progreso</div>
+  <p class="section-sub">Marcá lo que ya completaste. Se guarda automáticamente en tu navegador.</p>
+  
+  <div style="margin-top:40px">
+    <!-- Tabs del checklist -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px" id="cl-tabs">
+      <button onclick="showCL('campanas')" id="cl-tab-campanas" class="cl-tab active-tab" style="padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:linear-gradient(135deg,var(--red),#8b0000);color:white;transition:all .2s">🔔 Campanas</button>
+      <button onclick="showCL('artefactos')" id="cl-tab-artefactos" class="cl-tab" style="padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">💜 Artefactos</button>
+      <button onclick="showCL('jefes')" id="cl-tab-jefes" class="cl-tab" style="padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">👹 Jefes</button>
+      <button onclick="showCL('secretos')" id="cl-tab-secretos" class="cl-tab" style="padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);transition:all .2s">🗝️ Secretos</button>
+      <button onclick="resetCL()" style="padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:transparent;color:var(--text2);margin-left:auto;transition:all .2s" onmouseover="this.style.borderColor='var(--red)'" onmouseout="this.style.borderColor='var(--border2)'">🗑️ Resetear</button>
+    </div>
+
+    <!-- Campanas -->
+    <div id="cl-campanas" class="cl-panel">
+      <div id="prog-campanas" style="margin-bottom:16px"></div>
+      <div class="secrets-list" style="margin-top:0" id="list-campanas"></div>
+    </div>
+    <!-- Artefactos -->
+    <div id="cl-artefactos" class="cl-panel" style="display:none">
+      <div id="prog-artefactos" style="margin-bottom:16px"></div>
+      <div class="secrets-list" style="margin-top:0" id="list-artefactos"></div>
+    </div>
+    <!-- Jefes -->
+    <div id="cl-jefes" class="cl-panel" style="display:none">
+      <div id="prog-jefes" style="margin-bottom:16px"></div>
+      <div class="secrets-list" style="margin-top:0" id="list-jefes"></div>
+    </div>
+    <!-- Secretos -->
+    <div id="cl-secretos" class="cl-panel" style="display:none">
+      <div id="prog-secretos" style="margin-bottom:16px"></div>
+      <div class="secrets-list" style="margin-top:0" id="list-secretos"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TROFEOS -->
+<section id="trofeos" style="background:var(--surface)">
+  <div class="section-tag">Logros</div>
+  <div class="section-title">Trofeos y logros</div>
+  <p class="section-sub">Todos los trofeos organizados por dificultad.</p>
+  <div class="secrets-list" style="margin-top:40px">
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🥉 BRONCE</div>
+      <h3>Logros básicos</h3>
+      <p>• Completar la historia principal<br>• Encontrar la primera campana<br>• Derrotar al primer jefe (Matthias)<br>• Conseguir el caballo<br>• Visitar el Campamento Greymane<br>• Abrir la primera Puerta del Abismo<br>• Pescar por primera vez<br>• Completar 10 misiones secundarias</p>
+    </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🥈 PLATA</div>
+      <h3>Logros intermedios</h3>
+      <p>• Encontrar todas las campanas (8 total)<br>• Explorar las 5 regiones principales<br>• Desbloquear todos los puntos de viaje rápido<br>• Conseguir la montura Lobo<br>• Completar todas las misiones de facción<br>• Recolectar 5 artefactos del Abismo<br>• Derrotar 5 jefes principales<br>• Completar el sistema de crafting</p>
+    </div>
+    <div class="secret-item fade-up">
+      <div class="secret-badge">🥇 ORO</div>
+      <h3>Logros difíciles</h3>
+      <p>• Derrotar todos los jefes principales (8+)<br>• Recolectar todos los artefactos del Abismo (10)<br>• Conseguir equipamiento completo del Abismo<br>• Desbloquear la montura Dragón<br>• Completar todos los minijuegos<br>• Explorar el 100% del mapa<br>• Derrotar a Lava Myurdin<br>• Completar New Game Plus</p>
+    </div>
+    <div class="secret-item fade-up" style="border-left-color:var(--gold)">
+      <div class="secret-badge" style="color:var(--gold)">🏆 PLATINO</div>
+      <h3>El Explorador de Pywel</h3>
+      <p>Obtener todos los trofeos de Bronce, Plata y Oro. Completar el juego al 100%. La hazaña definitiva del continente de Pywel — demostrar que Kliff conquistó cada rincón del mundo.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+// ====== CHECKLIST ======
+const CL_DATA = {
+  campanas: [
+    {id:'c1',name:'Campana de Hernand — Torre Norte',region:'Hernand'},
+    {id:'c2',name:'Campana de Hernand — Castillo',region:'Hernand'},
+    {id:'c3',name:'Campana de Hernand — Pueblo viejo',region:'Hernand'},
+    {id:'c4',name:'Campana de Pailune — Plaza central',region:'Pailune'},
+    {id:'c5',name:'Campana de Pailune — Fortaleza',region:'Pailune'},
+    {id:'c6',name:'Campana de Demeniss — Cima nevada',region:'Demeniss'},
+    {id:'c7',name:'Campana de Demeniss — Cueva glacial',region:'Demeniss'},
+    {id:'c8',name:'Campana de Delesyia — Orilla del Río Nas',region:'Delesyia'},
+  ],
+  artefactos: [
+    {id:'a1',name:'Artefacto del Abismo #1 — Hernand Ruinas',region:'Hernand'},
+    {id:'a2',name:'Artefacto del Abismo #2 — Hernand Castillo',region:'Hernand'},
+    {id:'a3',name:'Artefacto del Abismo #3 — Pailune Norte',region:'Pailune'},
+    {id:'a4',name:'Artefacto del Abismo #4 — Pailune Sur',region:'Pailune'},
+    {id:'a5',name:'Artefacto del Abismo #5 — Demeniss Montaña',region:'Demeniss'},
+    {id:'a6',name:'Artefacto del Abismo #6 — Demeniss Valle',region:'Demeniss'},
+    {id:'a7',name:'Artefacto del Abismo #7 — Delesyia Bosque',region:'Delesyia'},
+    {id:'a8',name:'Artefacto del Abismo #8 — Crimson Desert',region:'C. Desert'},
+    {id:'a9',name:'Artefacto del Abismo #9 — The Abyss',region:'Abismo'},
+    {id:'a10',name:'Artefacto del Abismo #10 — The Abyss profundo',region:'Abismo'},
+  ],
+  jefes: [
+    {id:'j1',name:'Myurdin — Líder de los Osos Negros',region:'Pailune'},
+    {id:'j2',name:'Matthias — El guerrero del pueblo',region:'Hernand'},
+    {id:'j3',name:"Kailok the Hornsplitter",region:'Hernand'},
+    {id:'j4',name:"Marni's Excavatron",region:'Delesyia'},
+    {id:'j5',name:'Reed Devil — El diablo de los cañaverales',region:'Demeniss'},
+    {id:'j6',name:'Tenebrum — El invocado',region:'Hernand'},
+    {id:'j7',name:'Kearush the Slayer',region:'Hernand'},
+    {id:'j8',name:'Draven the Crowcaller',region:'Pailune'},
+  ],
+  secretos: [
+    {id:'s1',name:'Todas las ubicaciones de campanas encontradas',region:'General'},
+    {id:'s2',name:'Todos los artefactos del Abismo recolectados',region:'General'},
+    {id:'s3',name:'Stream Drops semana 1 reclamados',region:'General'},
+    {id:'s4',name:'Stream Drops semana 2 reclamados',region:'General'},
+    {id:'s5',name:'Mapa del tesoro completado',region:'General'},
+    {id:'s6',name:'Puerta del Abismo desbloqueada',region:'The Abyss'},
+  ]
+};
+
+function getChecked() { return JSON.parse(localStorage.getItem('cd_checklist')||'{}'); }
+function setChecked(d) { localStorage.setItem('cd_checklist', JSON.stringify(d)); }
+
+function renderCL(category) {
+  const items = CL_DATA[category];
+  const checked = getChecked();
+  const done = items.filter(i => checked[i.id]).length;
+  const pct = Math.round(done/items.length*100);
+  
+  document.getElementById('prog-'+category).innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <span style="font-size:13px;color:var(--text2)">${done} / ${items.length} completados</span>
+      <span style="font-size:13px;font-weight:700;color:${pct===100?'var(--gold)':'var(--red2)'}">${pct}%</span>
+    </div>
+    <div style="background:var(--surface2);border-radius:4px;height:6px;overflow:hidden">
+      <div style="background:linear-gradient(90deg,var(--red),var(--gold));height:100%;width:${pct}%;transition:width .4s ease;border-radius:4px"></div>
+    </div>`;
+  
+  document.getElementById('list-'+category).innerHTML = items.map(item => `
+    <div class="secret-item" style="display:flex;align-items:center;gap:14px;padding:14px 18px;cursor:pointer;${checked[item.id]?'opacity:0.6':''}" onclick="toggleItem('${item.id}','${category}')">
+      <div style="width:22px;height:22px;border-radius:6px;border:2px solid ${checked[item.id]?'var(--gold)':'var(--border2)'};background:${checked[item.id]?'var(--gold)':'transparent'};display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s">
+        ${checked[item.id]?'<span style="color:#000;font-size:13px">✓</span>':''}
+      </div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:600;color:var(--text);${checked[item.id]?'text-decoration:line-through':''}">${item.name}</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px">${item.region}</div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleItem(id, category) {
+  const checked = getChecked();
+  checked[id] = !checked[id];
+  setChecked(checked);
+  renderCL(category);
+}
+
+function showCL(category) {
+  document.querySelectorAll('.cl-panel').forEach(p => p.style.display = 'none');
+  document.getElementById('cl-'+category).style.display = 'block';
+  document.querySelectorAll('.cl-tab').forEach(t => {
+    t.style.background = 'var(--surface2)';
+    t.style.color = 'var(--text2)';
+  });
+  const activeTab = document.getElementById('cl-tab-'+category);
+  if(activeTab){ activeTab.style.background = 'linear-gradient(135deg,var(--red),#8b0000)'; activeTab.style.color = 'white'; }
+  renderCL(category);
+}
+
+// Inicializar checklist
+document.addEventListener('DOMContentLoaded', () => { renderCL('campanas'); });
+
+function resetCL() {
+  if(confirm('¿Resetear todo el progreso?')) { localStorage.removeItem('cd_checklist'); showCL('campanas'); }
+}
+
+// ====== BUSCADOR ======
+const SEARCH_INDEX = [
+  {title:'Espadones',desc:'Armas pesadas de alto daño',section:'#armas'},
+  {title:'Espadas',desc:'Armas versátiles de una mano',section:'#armas'},
+  {title:'Arcos',desc:'Armas a distancia',section:'#armas'},
+  {title:'Dagas',desc:'Herramientas de sigilo',section:'#armas'},
+  {title:'Myurdin',desc:'Jefe final, líder Osos Negros',section:'#jefes'},
+  {title:'Matthias',desc:'Jefe en Hernand',section:'#jefes'},
+  {title:'Reed Devil',desc:'Diablo de los cañaverales',section:'#jefes'},
+  {title:'Kearush',desc:'Bestia del castillo',section:'#jefes'},
+  {title:'Hernand',desc:'Región principal del juego',section:'#regiones'},
+  {title:'Pailune',desc:'Ciudad en conflicto',section:'#regiones'},
+  {title:'Demeniss',desc:'Montañas del norte',section:'#regiones'},
+  {title:'The Abyss',desc:'Reino misterioso',section:'#regiones'},
+  {title:'Kliff',desc:'Protagonista, líder Greymanes',section:'#personajes'},
+  {title:'Oongka',desc:'Compañero fuerza bruta',section:'#personajes'},
+  {title:'Caballo',desc:'Primera montura',section:'#monturas'},
+  {title:'Dragón',desc:'Montura épica tardía',section:'#monturas'},
+  {title:'Campanas',desc:'Coleccionables ocultos',section:'#checklist'},
+  {title:'Artefactos del Abismo',desc:'Mejoran habilidades',section:'#checklist'},
+  {title:'Stream Drops',desc:'Items gratis viendo streams',section:'#secretos'},
+  {title:'Build Guerrero',desc:'Espadón dos manos',section:'#builds'},
+  {title:'Build Cazador',desc:'Arco y sigilo',section:'#builds'},
+  {title:'Pesca',desc:'Aprender en Nas River Dock',section:'#mecanicas'},
+  {title:'Farming',desc:'Granja del campamento',section:'#mecanicas'},
+];
+
+function searchSite(q) {
+  const res = document.getElementById('search-results');
+  if(!q || q.length < 2) { res.style.display='none'; return; }
+  const matches = SEARCH_INDEX.filter(i => 
+    i.title.toLowerCase().includes(q.toLowerCase()) || 
+    i.desc.toLowerCase().includes(q.toLowerCase())
+  ).slice(0,6);
+  if(!matches.length) { res.style.display='none'; return; }
+  res.style.display='block';
+  res.innerHTML = matches.map(m => `
+    <a href="${m.section}" onclick="document.getElementById('global-search').value='';document.getElementById('search-results').style.display='none'"
+       style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;text-decoration:none;transition:background .15s;margin-bottom:4px;background:var(--surface2);border:1px solid var(--border)"
+       onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--text)">${m.title}</div>
+        <div style="font-size:11px;color:var(--text2)">${m.desc}</div>
+      </div>
+      <span style="margin-left:auto;color:var(--gold);font-size:11px">→</span>
+    </a>`).join('');
+}
+</script>
 
 <footer>
   <div class="nav-logo" style="font-family:'Cinzel',serif;font-size:20px;color:#d4a820;margin-bottom:12px">Crimson<span style="color:#e74c3c">Desert</span> Guía</div>
