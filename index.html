@@ -255,27 +255,111 @@ footer a{color:var(--gold);text-decoration:none}
 <div class="embers" id="embers"></div>
 
 <!-- NAVBAR -->
+<style>
+/* MENÚS DESPLEGABLES */
+.nav-links li { position: relative; }
+.dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 200px; background: rgba(10,5,8,0.98); border: 1px solid var(--border2); border-radius: 8px; padding: 8px 0; z-index: 200; box-shadow: 0 8px 32px rgba(0,0,0,0.6); backdrop-filter: blur(20px); }
+.dropdown a { display: block; padding: 9px 16px; color: var(--text2); font-size: 13px; font-weight: 500; text-decoration: none; transition: all .15s; white-space: nowrap; }
+.dropdown a:hover { color: var(--gold); background: rgba(212,168,32,0.08); }
+.dropdown a span { margin-right: 8px; }
+.nav-links li.open .dropdown { display: block; animation: dropIn .2s ease; }
+@keyframes dropIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:none} }
+.nav-links > li > a { display: flex; align-items: center; gap: 4px; }
+.nav-links > li > a .arrow { font-size: 9px; transition: transform .2s; opacity: 0.6; }
+.nav-links li.open > a .arrow { transform: rotate(180deg); }
+/* Mobile dropdown */
+.mobile-menu { display: none; position: fixed; top: 62px; left: 0; right: 0; background: rgba(10,5,8,0.98); border-bottom: 1px solid var(--border2); padding: 12px 5%; z-index: 99; max-height: 80vh; overflow-y: auto; }
+.mobile-menu a { display: block; padding: 10px 0; color: var(--text2); text-decoration: none; font-size: 14px; border-bottom: 1px solid var(--border); }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-section { font-size: 11px; font-weight: 700; color: var(--red2); text-transform: uppercase; letter-spacing: 1px; margin: 14px 0 6px; }
+</style>
+
 <nav>
   <div class="nav-logo">Crimson<span>Desert</span></div>
   <ul class="nav-links">
-    <li><a href="#armas">Armas</a></li>
-    <li><a href="#armaduras">Armaduras</a></li>
-    <li><a href="#secretos">Secretos</a></li>
-    <li><a href="#builds">Builds</a></li>
-    <li><a href="#facciones">Facciones</a></li>
-    <li><a href="#tips">Tips</a></li>
-    <li><a href="#regiones">Regiones</a></li>
-    <li><a href="#jefes">Jefes</a></li>
-    <li><a href="#videos">Videos</a></li>
-    <li><a href="#personajes">Personajes</a></li>
-    <li><a href="#monturas">Monturas</a></li>
-    <li><a href="#checklist">Checklist</a></li>
-    <li><a href="#trofeos">Trofeos</a></li>
+    <li onclick="toggleDD(this)">
+      <a href="#">⚔️ Equipamiento <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#armas"><span>⚔️</span>Armas</a>
+        <a href="#armaduras"><span>🛡️</span>Armaduras</a>
+        <a href="#builds"><span>🎯</span>Builds</a>
+        <a href="#monturas"><span>🐴</span>Monturas</a>
+      </div>
+    </li>
+    <li onclick="toggleDD(this)">
+      <a href="#">🗺️ Mundo <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#regiones"><span>🗺️</span>Regiones y Mapa</a>
+        <a href="#facciones"><span>⚔️</span>Facciones</a>
+        <a href="#personajes"><span>🧙</span>Personajes</a>
+        <a href="#mecanicas"><span>⚙️</span>Mecánicas</a>
+      </div>
+    </li>
+    <li onclick="toggleDD(this)">
+      <a href="#">👹 Combate <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#jefes"><span>👹</span>Jefes (Bosses)</a>
+        <a href="#tips"><span>💡</span>Tips y consejos</a>
+        <a href="#novedades"><span>🔄</span>Parche 1.00.03</a>
+      </div>
+    </li>
+    <li onclick="toggleDD(this)">
+      <a href="#">🗝️ Guías <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#secretos"><span>🗝️</span>Secretos</a>
+        <a href="#checklist"><span>✅</span>Checklist de progreso</a>
+        <a href="#trofeos"><span>🏆</span>Trofeos y logros</a>
+        <a href="#videos"><span>📺</span>Videos</a>
+      </div>
+    </li>
   </ul>
-  <div class="hamburger" onclick="toggleNav()">
+  <div class="hamburger" onclick="toggleMobile()">
     <span></span><span></span><span></span>
   </div>
 </nav>
+
+<!-- MENÚ MOBILE -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-section">⚔️ Equipamiento</div>
+  <a href="#armas" onclick="closeMobile()">⚔️ Armas</a>
+  <a href="#armaduras" onclick="closeMobile()">🛡️ Armaduras</a>
+  <a href="#builds" onclick="closeMobile()">🎯 Builds</a>
+  <a href="#monturas" onclick="closeMobile()">🐴 Monturas</a>
+  <div class="mobile-section">🗺️ Mundo</div>
+  <a href="#regiones" onclick="closeMobile()">🗺️ Regiones y Mapa</a>
+  <a href="#facciones" onclick="closeMobile()">⚔️ Facciones</a>
+  <a href="#personajes" onclick="closeMobile()">🧙 Personajes</a>
+  <a href="#mecanicas" onclick="closeMobile()">⚙️ Mecánicas</a>
+  <div class="mobile-section">👹 Combate</div>
+  <a href="#jefes" onclick="closeMobile()">👹 Jefes (Bosses)</a>
+  <a href="#tips" onclick="closeMobile()">💡 Tips y consejos</a>
+  <a href="#novedades" onclick="closeMobile()">🔄 Parche 1.00.03</a>
+  <div class="mobile-section">🗝️ Guías</div>
+  <a href="#secretos" onclick="closeMobile()">🗝️ Secretos</a>
+  <a href="#checklist" onclick="closeMobile()">✅ Checklist</a>
+  <a href="#trofeos" onclick="closeMobile()">🏆 Trofeos</a>
+  <a href="#videos" onclick="closeMobile()">📺 Videos</a>
+</div>
+
+<script>
+function toggleDD(li) {
+  const wasOpen = li.classList.contains('open');
+  document.querySelectorAll('.nav-links li').forEach(l => l.classList.remove('open'));
+  if (!wasOpen) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links')) {
+    document.querySelectorAll('.nav-links li').forEach(l => l.classList.remove('open'));
+  }
+});
+function toggleMobile() {
+  const m = document.getElementById('mobile-menu');
+  m.style.display = m.style.display === 'block' ? 'none' : 'block';
+}
+function closeMobile() {
+  document.getElementById('mobile-menu').style.display = 'none';
+}
+</script>
 
 <!-- HERO -->
 <section class="hero">
@@ -1399,13 +1483,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Menú mobile
-function toggleNav() {
-  const links = document.querySelector('.nav-links');
-  const show = links.style.display !== 'flex';
-  links.style.cssText = show
-    ? 'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:rgba(10,5,8,0.98);padding:20px;gap:20px;border-bottom:1px solid rgba(180,50,30,0.3)'
-    : '';
-}
+// toggleNav replaced by toggleMobile
 </script>
 </body>
 </html>
