@@ -1207,15 +1207,19 @@ function closeMobile() {
     const mapBounds = [[0,0],[630,1200]];
     const pywelMap = L.map('leaflet-map', {
       crs: L.CRS.Simple,
-      minZoom: -2,
-      maxZoom: 3,
+      minZoom: -3,
+      maxZoom: 2,
+      zoom: -2,
       zoomControl: true,
       attributionControl: false,
-      maxBounds: [[-100,-100],[730,1300]],
+      maxBounds: [[-150,-150],[780,1350]],
+      maxBoundsViscosity: 0.9,
+      wheelDebounceTime: 80,
+      wheelPxPerZoomLevel: 120,
     });
 
     L.imageOverlay('pywel-map.jpg', mapBounds).addTo(pywelMap);
-    pywelMap.fitBounds(mapBounds);
+    pywelMap.fitBounds(mapBounds, {padding:[10,10]});
 
     // Iconos personalizados
     function makeIcon(emoji, color) {
